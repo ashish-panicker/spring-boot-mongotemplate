@@ -33,4 +33,11 @@ public class CarDALImpl implements CarDAL{
 		return mongo.save(c);
 	}
 
+	@Override
+	public List<Car> findMakeIn(List<String> list) {
+		Query q = new Query();
+		q.addCriteria(Criteria.where("make").in(list));
+		return mongo.find(q, Car.class);
+	}
+
 }

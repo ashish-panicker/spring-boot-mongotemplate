@@ -10,6 +10,10 @@ public interface CarDAL {
 	
 	List<Car> findByMake(String make);
 	
+	List<Car> findMakeIn(List<String> list);
+	
 	Car save(Car c);
+	
+	
 
 }
